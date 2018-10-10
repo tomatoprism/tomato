@@ -1,1 +1,55 @@
-suzuki
+  <table class="table">
+    <tr>
+        <th> User情報</th>
+        <th></th>
+    </tr>
+
+        <tr>
+        	<td> フリガナ </td>
+        	<td></td>
+      	 </tr>
+
+        <tr>
+          <td> 名前 </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td> 郵便番号 </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td> 住所 </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td> 電話番号 </td>
+          <td></td>
+         </tr>
+
+        <tr>
+          <td> メールアドレス </td>
+          <td></td>
+        </tr>
+
+    </table>
+
+    <% if @user == current_user %>
+        <button class="btn btn-success" >
+        <%= link_to "Edit", edit_user_path %>
+      </button>
+     <% end %>
+
+<h2>購入履歴</h2>
+
+       <%= attachment_image_tag product %>
+       <%= buy_date %>
+       <%= product_name %>
+       <%= artist %>
+       <%= quantity %>
+       <%= price %>
+
+       <%= link_to "退会", 
+       <%= link_to "Back", path %>

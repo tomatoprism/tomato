@@ -10,19 +10,19 @@
 		</tr>
 	</thead>
 
-	<% @users.each do |user| %>
+	<p> @users.each do |user| </p>
 	<tbody>
 		<tr>
-			<td><%= user.id %></td>
-			<td><%= user.name %></td>
-			<td><%= user.email %></td>
-			<td><%= link_to "詳細", user_path(user), class:"btn-sm btn-success" %>
-				<%= link_to "削除", user_path(user), method: :delete, data: {confirm: "本当に消しますか?" }, class:"btn-sm btn-danger" %>
+			<td> user.id </td>
+			<td> user.name </td>
+			<td> user.email </td>
+			<td><p> link_to "詳細", user_path(user), class:"btn-sm btn-success" </p>
+				<p> link_to "削除", user_path(user), method: :delete, data: {confirm: "本当に消しますか?" }, class:"btn-sm btn-danger" </p>
 			</td>
-			<% end %>
+			<p> end </p>
 		</tr>
 	</tbody>
 </table>
 
-<%= link_to "戻る" :back %>
+<p> link_to "戻る" :back </p>
 

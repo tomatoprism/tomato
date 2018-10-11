@@ -1,2 +1,0 @@
-class Postage < ApplicationRecord
-end

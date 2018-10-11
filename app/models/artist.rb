@@ -1,3 +1,0 @@
-class Artist < ApplicationRecord
-
-end

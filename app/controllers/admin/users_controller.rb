@@ -11,6 +11,6 @@ class Admin::UsersController < Admin::ApplicationController
 	end
 		private
 	def product_params
-        params.require(:product).permit(:title, :image_id, :price, :label, :stock, :release, :introduction, :artist_id, :category_id)
+        params.require(:product).permit(:title, :image, :price, :label, :stock, :release, :introduction, :artist_id, :category_id)
    	end
 end

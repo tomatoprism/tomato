@@ -3202,3 +3202,764 @@ Processing by TopController#top as HTML
 Completed 200 OK in 414ms (Views: 396.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 10.0.2.2 at 2018-10-11 11:37:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1689ms (Views: 1662.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new_admin_session" for 10.0.2.2 at 2018-10-11 11:37:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/new_admin_session"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/new_admin_session/" for 10.0.2.2 at 2018-10-11 11:38:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/new_admin_session"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/new_admin_session/admin" for 10.0.2.2 at 2018-10-11 11:38:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/new_admin_session/admin"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2018-10-11 11:38:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 550ms (Views: 526.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/session" for 10.0.2.2 at 2018-10-11 11:38:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admin/session"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/admin/sign_in" for 10.0.2.2 at 2018-10-11 11:38:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admin/sign_in"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-11 11:39:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 438ms (Views: 413.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-11 11:39:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 526ms (Views: 503.7ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2018-10-11 11:39:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyUbj4S0dPeXUGA1/COuC3L0pN7LnptUjiC/zK6zObxn2tZJ+xJ6FOz+6Od9UWMiw8empUfj1uP311uGytDldw==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyUbj4S0dPeXUGA1/COuC3L0pN7LnptUjiC/zK6zObxn2tZJ+xJ6FOz+6Od9UWMiw8empUfj1uP311uGytDldw==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.8ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 711ms (Views: 583.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2018-10-11 11:39:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OS9SlmRsRt8sZzC5vUhNEEJjSxbX+blwvR4MwrutDFfp0J9QG8pIPFfJuGs8OoA581BJbVuE9MfE6eiI387QnA==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OS9SlmRsRt8sZzC5vUhNEEJjSxbX+blwvR4MwrutDFfp0J9QG8pIPFfJuGs8OoA581BJbVuE9MfE6eiI387QnA==", "admin"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.7ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 567ms (Views: 452.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_up" for 10.0.2.2 at 2018-10-11 11:40:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::RegistrationsController#new as HTML
+  Rendering admins/registrations/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.1ms)
+  Rendered admins/registrations/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 563ms (Views: 561.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins" for 10.0.2.2 at 2018-10-11 11:40:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pPe2xEHu/9vTdNLlD9RxX6Liz3f/NxiNHztQ2CbiCPB0CHsCPkjxOKjaWjeOprx2E9HNDHNKVTpmzLSSQoHUOw==", "admin"=>{"email"=>"zzz@zzz", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "zzz@zzz"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdmin Create (4.3ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "zzz@zzz"], ["encrypted_password", "$2a$11$Gffj5jT6ynXm/deO.CxsBuKEsdBmyWLoiE/KxCDCTY2B0MjcGW0B."], ["created_at", "2018-10-11 11:40:42.800297"], ["updated_at", "2018-10-11 11:40:42.800297"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 231ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-10-11 11:40:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.3ms)
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 428ms (Views: 409.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:40:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 6.1ms)
+
+
+  
+SyntaxError (/vagrant/tomato/app/views/admin/users/show.html.erb:38: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/users/show.html.erb:38: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:41:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (58.6ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f8115adf960>
+Did you mean?  image_id_in_database):
+     5: 	<h2>新規追加</h2>
+     6: 	<%= form_for(@product_new) do |f|%>
+     7: 	<p>ジャケット画像</p>
+     8: 	<%= f.attachment_field :image_id, placeholder: "ジャケット画像" %>
+     9: 	<p>シングル・アルバム名</p>
+    10: 	<%= f.text_field :title %>
+    11: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:8:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096195612640'
+app/views/admin/users/show.html.erb:6:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096195612640'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:42:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (2.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:12
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:14
+  Rendered admin/users/show.html.erb within layouts/application (307.4ms)
+Completed 500 Internal Server Error in 447ms (ActiveRecord: 10.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `date_field_tag' for #<ActionView::Helpers::FormBuilder:0x00007f81161bb4a0>
+Did you mean?  date_field):
+    21: 	<p>レーベル名</p>
+    22: 	<%= f.text_field :label %>
+    23: 	<p>発売日</p>
+    24: 	<%= f.date_field_tag :release %>
+    25: 	<p>値段</p>
+    26: 	<%= f.text_field :price%>
+    27: 	<p>商品説明</p>
+  
+app/views/admin/users/show.html.erb:24:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096199255800'
+app/views/admin/users/show.html.erb:6:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096199255800'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:43:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:12
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:14
+  Rendered admin/users/show.html.erb within layouts/application (9.6ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 592ms (Views: 550.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:44:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:10
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:12
+  Rendered admin/users/show.html.erb within layouts/application (8.9ms)
+  [1m[36mAdmin Load (2.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 719ms (Views: 661.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:46:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (53.4ms)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f811679af88>
+Did you mean?  image_id_in_database):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096202287780'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096202287780'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:46:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (50.8ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_attachment_definition' for #<Product:0x00007f8114dbb568>):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096188661780'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096188661780'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:46:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:9
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:11
+  Rendered admin/users/show.html.erb within layouts/application (44.8ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 578ms (Views: 545.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:47:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (56.1ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x000056045f543558>
+Did you mean?  image_id_in_database):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_47288389579940'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_47288389579940'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:47:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (46.8ms)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_database_attachment_definition' for #<Product:0x00007f81148eb6f0>
+Did you mean?  image_id_change_to_be_saved):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id_database %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096186151460'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096186151460'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:48:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (48.6ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_change_to_be_saved_attachment_definition' for #<Product:0x00007f8115aedf88>
+Did you mean?  image_id_change_to_be_saved):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id_change_to_be_saved %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096195642760'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096195642760'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:48:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f81165a9288>
+Did you mean?  image_id_in_database):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096201128380'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096201128380'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:49:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (45.4ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_in_database_attachment_definition' for #<Product:0x00007f81240cfab0>):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id_in_database, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096316166880'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096316166880'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:49:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (46.7ms)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f8114365b40>
+Did you mean?  image_id_in_database):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image_id, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096183287040'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096183287040'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:52:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (39.9ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_attachment_definition' for #<Product:0x00007f81156598f0>):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb___3681132933196237607_70096193219880'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb___3681132933196237607_70096193219880'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:54:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  Rendered admin/users/show.html.erb within layouts/application (43.4ms)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 6.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_attachment_definition' for #<Product:0x00007f918c4355b0>):
+    2: 	<h2>新規追加</h2>
+    3: 	<%= form_for(@product_new) do |f|%>
+    4: 	<p>ジャケット画像</p>
+    5: 	<%= f.attachment_field :image, placeholder: "ジャケット画像" %>
+    6: 	<p>シングル・アルバム名</p>
+    7: 	<%= f.text_field :title %>
+    8: 	<p>アーティスト名</p>
+  
+app/views/admin/users/show.html.erb:5:in `block in _app_views_admin_users_show_html_erb__1352160026909216231_70131549549420'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb__1352160026909216231_70131549549420'
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:57:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:9
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:11
+  Rendered admin/users/show.html.erb within layouts/application (201.4ms)
+  [1m[36mAdmin Load (2.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2378ms (Views: 2316.5ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 11:58:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:9
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:11
+  Rendered admin/users/show.html.erb within layouts/application (7.2ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 585ms (Views: 538.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 12:00:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:9
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:11
+  Rendered admin/users/show.html.erb within layouts/application (71.0ms)
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2141ms (Views: 2038.1ms | ActiveRecord: 29.4ms)
+
+
+Started DELETE "/admins/sign_out" for 10.0.2.2 at 2018-10-11 12:07:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u4+JWUNphEKuwmTFNDB/G9LEp7+ZLmgwKHVLgLJfrxdrcESfPM+KodVs7Be1QrIyY/elxBVTJYdRgq/K1jxz3A=="}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2018-10-11 12:07:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TopController#top as HTML
+  Rendering top/top.html.erb within layouts/application
+  Rendered top/top.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 465ms (Views: 442.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/users/2" for 10.0.2.2 at 2018-10-11 12:07:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (2.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/show.html.erb:9
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/show.html.erb:11
+  Rendered admin/users/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 696ms (Views: 638.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/admin/sign_in" for 10.0.2.2 at 2018-10-11 12:08:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admin/sign_in"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-11 12:08:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 593ms (Views: 560.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 10.0.2.2 at 2018-10-11 12:08:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FKt/7C8zIR77e0CaclJP646fbmHZ4hRl9MLrMWXorLw7kNndZt871H6AcQnyenONoTKJ9gl86cY49Bz1Jyv+pA==", "admin"=>{"email"=>"zzz@zzz", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FKt/7C8zIR77e0CaclJP646fbmHZ4hRl9MLrMWXorLw7kNndZt871H6AcQnyenONoTKJ9gl86cY49Bz1Jyv+pA==", "admin"=>{"email"=>"zzz@zzz", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (0.8ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 728ms (Views: 602.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-10-11 12:08:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.5.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 455ms (Views: 432.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/admins/sign_in" for 10.0.2.2 at 2018-10-11 12:08:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.3ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 516ms (Views: 513.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/messages/new" for 10.0.2.2 at 2018-10-11 12:11:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MessagesController#new as HTML
+  Rendering public/messages/new.html.erb within layouts/application
+  Rendered public/messages/new.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>お問い合わせフォーム</h1>
+    2: 
+    3: <%= form_for(@message) do |f| %>
+    4: 
+    5: <h4>名前</h4>
+    6: <%= f.text_field :name %>
+  
+app/views/public/messages/new.html.erb:3:in `_app_views_public_messages_new_html_erb___2547723357856272489_69853320034300'

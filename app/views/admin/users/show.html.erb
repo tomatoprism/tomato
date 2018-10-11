@@ -1,11 +1,8 @@
 <div>
-	<h1>管理者</h1>
-</div>
-<div>
 	<h2>新規追加</h2>
 	<%= form_for(@product_new) do |f|%>
 	<p>ジャケット画像</p>
-	<%= f.attachment_field :image_id, placeholder: "ジャケット画像" %>
+	<%= f.attachment_field :image, placeholder: "ジャケット画像" %>
 	<p>シングル・アルバム名</p>
 	<%= f.text_field :title %>
 	<p>アーティスト名</p>
@@ -21,7 +18,7 @@
 	<p>レーベル名</p>
 	<%= f.text_field :label %>
 	<p>発売日</p>
-	<%= f.date_field_tag :release %>
+	<%= f.date_select :release %>
 	<p>値段</p>
 	<%= f.text_field :price%>
 	<p>商品説明</p>
@@ -29,5 +26,6 @@
 	<p>在庫数</p>
 	<%= f.text_field :stock %>
 	<%= f.submit '追加' %>
+	<% end %>
 </div>
 

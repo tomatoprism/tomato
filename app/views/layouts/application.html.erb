@@ -15,17 +15,58 @@
           <h1>トマトプリズム</h1>
         </nav>
         <nav class="nav-list">
+          <% if admin == current_admin %>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <p class="glyphicon glyphicon-log-in sin_in">ログイン</p>
+              <%link_to "管理者",admin_user(current_admin) %>
             </li>
             <li>
-              <p class="glyphicon glyphicon-edit sin_up">サインアップ</p>
+              <%link_to "User一覧",admin_users %>
             </li>
             <li>
-              <p class="glyphicon glyphicon-search seach">検索</p>
+              <p class="glyphicon glyphicon-search seach">Product一覧</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">ログアウト</p>
             </li>
           </ul>
+          <% elsif user == current_user %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">マイページ</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-edit sin_up">カート</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-search seach">お気に入り</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">ログアウト</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">検索</p>
+            </li>
+          </ul>
+          <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">マイページ</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-edit sin_up">カート</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-search seach">お気に入り</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">ログアウト</p>
+            </li>
+            <li>
+              <p class="glyphicon glyphicon-log-in sin_in">検索</p>
+            </li>
+          </ul>
+          <% end %>
         </nav>
       </div>
     </header>

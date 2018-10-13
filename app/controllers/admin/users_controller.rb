@@ -7,7 +7,9 @@ class Admin::UsersController < Admin::ApplicationController
 		@product_new = Product.new
 	end
 	def create
-		@product_new = Product.save(product_params)
+		@product_new = Product.new(product_params)
+		@product_new.save(product_params)
+		redirect_to root_path
 	end
 	
 	private

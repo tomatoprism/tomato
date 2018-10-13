@@ -8,7 +8,7 @@
 	<p>アーティスト名</p>
 	<%= f.select :artist_id, Artist.all.map{|u| [u.artist_name, u.id]}, include_blank: true %>
 	<p>カテゴリー</p>
-	<%= f.collection_check_boxes(:category_id, Category.all, :id, :name) do |b| %>
+	<%= f.collection_check_boxes(:category_id, Category.all, :id, :category_name, include_hidden: false) do |b| %>
 		<%= b.label { b.check_box + b.text } %>
 	<% end %>
 	<p>Disk数</p>
@@ -20,11 +20,13 @@
 	<p>発売日</p>
 	<%= f.date_select :release %>
 	<p>値段</p>
-	<%= f.text_field :price%>
+	<%= f.text_field :price %>
 	<p>商品説明</p>
 	<%= f.text_area :introduction %>
 	<p>在庫数</p>
 	<%= f.text_field :stock %>
+	<p></p>
 	<%= f.submit '追加' %>
 	<% end %>
 </div>
+

@@ -4,7 +4,9 @@ class CategoriesController < ApplicationController
   end
 
   def create
-  	@category_new = Category.save(category_params)
+    @category_new = Category.new(category_params)
+  	@category_new.save(category_params)
+    redirect_to new_category_path
   end
 
   def update
@@ -15,6 +17,6 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:category_name)
   end
 end

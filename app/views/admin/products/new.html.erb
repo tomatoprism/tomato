@@ -1,0 +1,14 @@
+<div>
+	<h1>カテゴリー編集・登録</h1>
+</div>
+
+<div>
+	<h2>カテゴリー新規登録</h2>
+	<%= form_for(@category_new) do |f| %>
+	<p>カテゴリー名</p>
+	<%= f.text_field :name %>
+
+	<%= f.submit '追加' %>
+
+	<% end %>
+</div>

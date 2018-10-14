@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
-	belongs_to :category
 	belongs_to :artist
 
+	has_many :product_categories
+	has_many :categories, through: :product_categories
 	has_many :reviews
 	has_many :cart_items
 	attachment :image

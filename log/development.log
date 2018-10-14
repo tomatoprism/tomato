@@ -14402,3 +14402,630 @@ Processing by Admin::UsersController#show as HTML
 Completed 200 OK in 1891ms (Views: 1849.9ms | ActiveRecord: 3.0ms)
 
 
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:01:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  Rendered public/products/index.html.erb within layouts/application (38.8ms)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `aritist_name' for 1:Integer):
+    13:   <div class = "product-info" >
+    14:       
+    15: 
+    16:       <li> <%= product.artist_id.aritist_name %> </li>
+    17:       <li> <%= product.price %> </li>
+    18:       <li> <% if product.stock == 0 then %>
+    19:              在庫なし
+  
+app/views/public/products/index.html.erb:16:in `block in _app_views_public_products_index_html_erb___4600057860790143987_47282623028640'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___4600057860790143987_47282623028640'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:01:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:16
+  Rendered public/products/index.html.erb within layouts/application (115.0ms)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 7.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `aritist_name' for #<Artist:0x00007f2d3c1febc0>
+Did you mean?  artist_name
+               artist_name?
+               artist_name=):
+    13:   <div class = "product-info" >
+    14:       
+    15: 
+    16:       <li> <%= product.artist.aritist_name %> </li>
+    17:       <li> <%= product.price %> </li>
+    18:       <li> <% if product.stock == 0 then %>
+    19:              在庫なし
+  
+app/views/public/products/index.html.erb:16:in `block in _app_views_public_products_index_html_erb___4600057860790143987_69916128518880'
+app/views/public/products/index.html.erb:3:in `_app_views_public_products_index_html_erb___4600057860790143987_69916128518880'
+Started GET "/products" for 10.0.2.2 at 2018-10-14 05:02:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:3
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:16
+  Rendered public/products/index.html.erb within layouts/application (4.6ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1903ms (Views: 1863.8ms | ActiveRecord: 8.9ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateProductCategories (20181014053248)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181014053248_create_product_categories.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181014053248_create_product_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181014053248"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to RemoveCategoryIdFromProducts (20181014053906)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "image_id" text DEFAULT NULL, "price" integer DEFAULT NULL, "label" varchar DEFAULT NULL, "stock" integer DEFAULT NULL, "release" date DEFAULT NULL, "introduction" varchar DEFAULT NULL, "artist_id" integer DEFAULT NULL, "category_id" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","title","image_id","price","label","stock","release","introduction","artist_id","category_id","created_at","updated_at")
+                     SELECT "id","title","image_id","price","label","stock","release","introduction","artist_id","category_id","created_at","updated_at" FROM "products"[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "image_id" text DEFAULT NULL, "price" integer DEFAULT NULL, "label" varchar DEFAULT NULL, "stock" integer DEFAULT NULL, "release" date DEFAULT NULL, "introduction" varchar DEFAULT NULL, "artist_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","title","image_id","price","label","stock","release","introduction","artist_id","created_at","updated_at")
+                     SELECT "id","title","image_id","price","label","stock","release","introduction","artist_id","created_at","updated_at" FROM "aproducts"[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20181014053906_remove_category_id_from_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181014053906"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:19:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_form.html.erb (127.7ms)
+  Rendered admin/users/show.html.erb within layouts/application (144.8ms)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 19.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `category_id' for #<Product:0x00007f9a38467dd0>
+Did you mean?  category_ids
+               category_ids=):
+     8:       <%= f.select :artist_id, Artist.all.map{|u| [u.artist_name, u.id]}, include_blank: true %>
+     9:     <p>カテゴリー</p>
+    10:       <%= f.collection_check_boxes(:category_id, Category.all, :id, :category_name, include_hidden: false) do |b| %>
+    11:       <%= b.label { b.check_box + b.text } %>
+    12:       <% end %>
+    13:   </div>
+    14:   <p>ディスク</p>
+  
+app/views/admin/users/_form.html.erb:11:in `block (3 levels) in _app_views_admin_users__form_html_erb___2823196297598350751_70150173989040'
+app/views/admin/users/_form.html.erb:11:in `block (2 levels) in _app_views_admin_users__form_html_erb___2823196297598350751_70150173989040'
+app/views/admin/users/_form.html.erb:10:in `block in _app_views_admin_users__form_html_erb___2823196297598350751_70150173989040'
+app/views/admin/users/_form.html.erb:1:in `_app_views_admin_users__form_html_erb___2823196297598350751_70150173989040'
+app/views/admin/users/show.html.erb:3:in `_app_views_admin_users_show_html_erb__4497231966842299430_70150173905400'
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:20:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.9ms)
+  Rendered admin/users/_track_fields.html.erb (1.8ms)
+  Rendered admin/users/_disc_fields.html.erb (77.2ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (34.2ms)
+  Rendered admin/users/_form.html.erb (307.3ms)
+  Rendered admin/users/show.html.erb within layouts/application (347.6ms)
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2679ms (Views: 2626.3ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:20:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QAe2+CCnOe4vxmIxnLHiMYbdaQfvdLwuQeOixrQYc8xZQyLKrFW3ek1Sl6+DESFSoNFtbfxBxw5It7QRRmiEyQ==", "product"=>{"image"=>"{}", "title"=>"", "artist_id"=>"", "category_ids"=>["1", "2", "3", "4"], "discs_attributes"=>{"0"=>{"disc_name"=>"", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"", "list_num"=>""}}}}, "label"=>"", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"", "introduction"=>"", "stock"=>""}, "commit"=>"追加"}
+Unpermitted parameter: :category_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 10ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:20:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (39.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.7ms)
+  Rendered admin/users/_disc_fields.html.erb (22.1ms)
+  Rendered admin/users/_form.html.erb (105.1ms)
+  Rendered admin/users/show.html.erb within layouts/application (130.7ms)
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 593ms (Views: 565.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/products" for 10.0.2.2 at 2018-10-14 06:23:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  Rendered admin/products/index.html.erb within layouts/application (28.0ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>商品一覧</h1>
+    2: 
+    3: <% @products.each do |product| %>
+    4: 
+    5:  <li class = "item" >
+    6: 
+  
+app/views/admin/products/index.html.erb:3:in `_app_views_admin_products_index_html_erb__3081536792622027499_70139804233960'
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:23:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hlPSM1y/0Bm/yxKgyTk3UHdvBYtnJ11NwXNLBlRXlzPXdt6QYBx1ARr2dSchCe+Z9G4fD6p5lU+Udv76yGpWQ==", "product"=>{"image"=>"{}", "title"=>"2", "artist_id"=>"1", "category_ids"=>["2", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"2", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"2", "list_num"=>"2"}}}}, "label"=>"2", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"2", "introduction"=>"2", "stock"=>"2"}, "commit"=>"追加"}
+Unpermitted parameter: :category_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProduct Create (5.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "2"], ["image_id", nil], ["price", 2], ["label", "2"], ["stock", 2], ["release", "2018-10-14"], ["introduction", "2"], ["artist_id", 1], ["created_at", "2018-10-14 06:23:48.988580"], ["updated_at", "2018-10-14 06:23:48.988580"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (1.3ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["disc_name", "2"], ["created_at", "2018-10-14 06:23:48.996386"], ["updated_at", "2018-10-14 06:23:48.996386"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (0.7ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "2"], ["list_num", 2], ["disc_id", 2], ["created_at", "2018-10-14 06:23:48.999417"], ["updated_at", "2018-10-14 06:23:48.999417"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 167ms (ActiveRecord: 58.4ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:23:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.1ms)
+  Rendered admin/users/_track_fields.html.erb (2.5ms)
+  Rendered admin/users/_disc_fields.html.erb (52.7ms)
+  Rendered admin/users/_track_fields.html.erb (1.3ms)
+  Rendered admin/users/_disc_fields.html.erb (25.1ms)
+  Rendered admin/users/_form.html.erb (248.0ms)
+  Rendered admin/users/show.html.erb within layouts/application (263.0ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 1895ms (Views: 1859.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:28:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.7ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (64.7ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (29.0ms)
+  Rendered admin/users/_form.html.erb (278.4ms)
+  Rendered admin/users/show.html.erb within layouts/application (299.9ms)
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2486ms (Views: 2342.8ms | ActiveRecord: 36.6ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:28:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L0Q8vLBnB1a8paQsMKzMyNrqdAw+IqwOf4M9jcaOfE82AKiOPJWJwt4xUbIvDA+r/OZwZi0X1y521ytaNP6LSg==", "product"=>{"image"=>"{}", "title"=>"q", "artist_id"=>"1", "category_ids"=>["1"], "discs_attributes"=>{"0"=>{"disc_name"=>"q", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"q", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Unpermitted parameter: :category_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProduct Create (3.7ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "q"], ["image_id", nil], ["price", 1], ["label", "1"], ["stock", 1], ["release", "2018-10-14"], ["introduction", "1"], ["artist_id", 1], ["created_at", "2018-10-14 06:28:23.310591"], ["updated_at", "2018-10-14 06:28:23.310591"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (0.9ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["disc_name", "q"], ["created_at", "2018-10-14 06:28:23.317534"], ["updated_at", "2018-10-14 06:28:23.317534"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (1.0ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "q"], ["list_num", 1], ["disc_id", 3], ["created_at", "2018-10-14 06:28:23.320473"], ["updated_at", "2018-10-14 06:28:23.320473"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 56ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:28:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.7ms)
+  Rendered admin/users/_track_fields.html.erb (1.0ms)
+  Rendered admin/users/_disc_fields.html.erb (47.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.0ms)
+  Rendered admin/users/_disc_fields.html.erb (28.1ms)
+  Rendered admin/users/_form.html.erb (127.2ms)
+  Rendered admin/users/show.html.erb within layouts/application (141.8ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 656ms (Views: 584.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:30:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (3.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (3.4ms)
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_disc_fields.html.erb (68.6ms)
+  Rendered admin/users/_track_fields.html.erb (0.8ms)
+  Rendered admin/users/_disc_fields.html.erb (29.0ms)
+  Rendered admin/users/_form.html.erb (283.3ms)
+  Rendered admin/users/show.html.erb within layouts/application (312.1ms)
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2445ms (Views: 2306.3ms | ActiveRecord: 34.9ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:30:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgUSti8gw/z24cE0q1IwvMbjE7n8GH3NTQoady0wn+6nQYaEo9JNaJR1NKq08vPf4O8X0+8tBu1EXgyg30Bo6w==", "product"=>{"image"=>"{}", "title"=>"1", "artist_id"=>"1", "category_ids"=>["1", "2", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"1", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"1", "list_num"=>"1"}}}}, "label"=>"1", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"1", "introduction"=>"1", "stock"=>"1"}, "commit"=>"追加"}
+Unpermitted parameter: :category_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (2.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProduct Create (4.7ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "1"], ["image_id", nil], ["price", 1], ["label", "1"], ["stock", 1], ["release", "2018-10-14"], ["introduction", "1"], ["artist_id", 1], ["created_at", "2018-10-14 06:30:50.759384"], ["updated_at", "2018-10-14 06:30:50.759384"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (2.7ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 4], ["disc_name", "1"], ["created_at", "2018-10-14 06:30:50.767858"], ["updated_at", "2018-10-14 06:30:50.767858"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (29.2ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "1"], ["list_num", 1], ["disc_id", 4], ["created_at", "2018-10-14 06:30:50.777144"], ["updated_at", "2018-10-14 06:30:50.777144"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 93ms (ActiveRecord: 46.0ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:30:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.2ms)
+  Rendered admin/users/_track_fields.html.erb (1.4ms)
+  Rendered admin/users/_disc_fields.html.erb (44.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.2ms)
+  Rendered admin/users/_disc_fields.html.erb (29.3ms)
+  Rendered admin/users/_form.html.erb (123.3ms)
+  Rendered admin/users/show.html.erb within layouts/application (148.6ms)
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 620ms (Views: 589.5ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:33:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vDndi9N5i9xyGYFaGtuTh9I+x9amINC3fvhY7FPXhg2lfUm5X4sFSBCNdMQFe1Dk9DLDvLUVq5d3rE47oadxCA==", "product"=>{"image"=>"{}", "title"=>"", "artist_id"=>"", "category_ids"=>["1", "2"], "discs_attributes"=>{"0"=>{"disc_name"=>"", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"", "list_num"=>""}}}}, "label"=>"", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"", "introduction"=>"", "stock"=>""}, "commit"=>"追加"}
+Unpermitted parameter: :category_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (2.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 28ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:33:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.7ms)
+  Rendered admin/users/_track_fields.html.erb (1.3ms)
+  Rendered admin/users/_disc_fields.html.erb (65.7ms)
+  Rendered admin/users/_track_fields.html.erb (1.9ms)
+  Rendered admin/users/_disc_fields.html.erb (37.9ms)
+  Rendered admin/users/_form.html.erb (184.0ms)
+  Rendered admin/users/show.html.erb within layouts/application (204.7ms)
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 809ms (Views: 774.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:35:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (2.8ms)
+  Rendered admin/users/_track_fields.html.erb (1.9ms)
+  Rendered admin/users/_disc_fields.html.erb (53.3ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (19.4ms)
+  Rendered admin/users/_form.html.erb (239.8ms)
+  Rendered admin/users/show.html.erb within layouts/application (259.1ms)
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2040ms (Views: 1909.1ms | ActiveRecord: 39.2ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:35:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QlF4BFA8i4ylNQ/FwxLF858NBz4F1YqYb6g6Ocbi3cxbFew23M4FGMeh+lvcsgaQuQEDVBbg8bhm/CzuNJIqyQ==", "product"=>{"image"=>"{}", "title"=>"", "artist_id"=>"", "category_ids"=>["1", "2", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"", "list_num"=>""}}}}, "label"=>"", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"", "introduction"=>"", "stock"=>""}, "commit"=>"追加"}
+Unpermitted parameter: :category_ids
+  [1m[35m (3.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 24ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:35:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.4ms)
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_disc_fields.html.erb (52.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.2ms)
+  Rendered admin/users/_disc_fields.html.erb (26.5ms)
+  Rendered admin/users/_form.html.erb (135.3ms)
+  Rendered admin/users/show.html.erb within layouts/application (159.7ms)
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 647ms (Views: 618.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:40:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/tomato/app/controllers/admin/products_controller.rb:35: syntax error, unexpected ','
+...ion, :artist_id, category_ids:, discs_attributes: [:id, :dis...
+...                              ^
+/vagrant/tomato/app/controllers/admin/products_controller.rb:35: syntax error, unexpected ')', expecting keyword_end
+...tes: [:id, :music, :list_num]])
+...                              ^):
+  
+app/controllers/admin/products_controller.rb:35: syntax error, unexpected ','
+app/controllers/admin/products_controller.rb:35: syntax error, unexpected ')', expecting keyword_end
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:40:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (2.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (4.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_disc_fields.html.erb (102.8ms)
+  Rendered admin/users/_track_fields.html.erb (0.6ms)
+  Rendered admin/users/_disc_fields.html.erb (35.1ms)
+  Rendered admin/users/_form.html.erb (338.8ms)
+  Rendered admin/users/show.html.erb within layouts/application (366.9ms)
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2611ms (Views: 2476.3ms | ActiveRecord: 38.2ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:41:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zMd5fj7GTznKaRpeKA2RkkV3k2lbrSQrdT1htYYJ4qDVg+1MsjTBraj978A3rVLxY3uXA0iYXwt8aXdidHkVpQ==", "product"=>{"image"=>"{}", "title"=>"", "artist_id"=>"", "category_ids"=>["1", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"", "list_num"=>""}}}}, "label"=>"", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"", "introduction"=>"", "stock"=>""}, "commit"=>"追加"}
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 1], ["id", 3]]
+  ↳ app/controllers/admin/products_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 54ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:41:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.5ms)
+  Rendered admin/users/_track_fields.html.erb (2.9ms)
+  Rendered admin/users/_disc_fields.html.erb (41.1ms)
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_disc_fields.html.erb (30.8ms)
+  Rendered admin/users/_form.html.erb (126.3ms)
+  Rendered admin/users/show.html.erb within layouts/application (149.9ms)
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 666ms (Views: 636.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/admin/products" for 10.0.2.2 at 2018-10-14 06:44:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TnSMKovLUI8MR9PjsFNT//vR8OnlDEMb3RIWky2QVIlXMBgYBzneG27TJn2v85Cc3d30g/Y5ODvURgBE3+CjjA==", "product"=>{"image"=>"{}", "title"=>"4", "artist_id"=>"1", "category_ids"=>["2", "3"], "discs_attributes"=>{"0"=>{"disc_name"=>"4", "_destroy"=>"false", "tracks_attributes"=>{"0"=>{"music"=>"4", "list_num"=>"4"}}}}, "label"=>"4", "release(1i)"=>"2018", "release(2i)"=>"10", "release(3i)"=>"14", "price"=>"4", "introduction"=>"4", "stock"=>"4"}, "commit"=>"追加"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/controllers/admin/products_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProduct Create (4.3ms)[0m  [1m[32mINSERT INTO "products" ("title", "image_id", "price", "label", "stock", "release", "introduction", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "4"], ["image_id", nil], ["price", 4], ["label", "4"], ["stock", 4], ["release", "2018-10-14"], ["introduction", "4"], ["artist_id", 1], ["created_at", "2018-10-14 06:44:00.739929"], ["updated_at", "2018-10-14 06:44:00.739929"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProductCategory Create (1.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 5], ["category_id", 2], ["created_at", "2018-10-14 06:44:00.746074"], ["updated_at", "2018-10-14 06:44:00.746074"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 5], ["category_id", 3], ["created_at", "2018-10-14 06:44:00.749766"], ["updated_at", "2018-10-14 06:44:00.749766"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mDisc Create (0.7ms)[0m  [1m[32mINSERT INTO "discs" ("product_id", "disc_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 5], ["disc_name", "4"], ["created_at", "2018-10-14 06:44:00.752657"], ["updated_at", "2018-10-14 06:44:00.752657"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mTrack Create (0.9ms)[0m  [1m[32mINSERT INTO "tracks" ("music", "list_num", "disc_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["music", "4"], ["list_num", 4], ["disc_id", 5], ["created_at", "2018-10-14 06:44:00.754762"], ["updated_at", "2018-10-14 06:44:00.754762"]]
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:30
+  [1m[36mAdmin Load (1.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+Redirected to http://localhost:3000/admin/users/1
+Completed 302 Found in 180ms (ActiveRecord: 46.5ms)
+
+
+Started GET "/admin/users/1" for 10.0.2.2 at 2018-10-14 06:44:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/users/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/admin/users/_form.html.erb:8
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/users/_form.html.erb:10
+  Rendered admin/users/_track_fields.html.erb (1.9ms)
+  Rendered admin/users/_track_fields.html.erb (0.7ms)
+  Rendered admin/users/_disc_fields.html.erb (53.6ms)
+  Rendered admin/users/_track_fields.html.erb (1.1ms)
+  Rendered admin/users/_disc_fields.html.erb (23.9ms)
+  Rendered admin/users/_form.html.erb (214.6ms)
+  Rendered admin/users/show.html.erb within layouts/application (240.2ms)
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+Completed 200 OK in 2213ms (Views: 2185.0ms | ActiveRecord: 3.3ms)
+
+

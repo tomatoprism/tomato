@@ -7,10 +7,9 @@
     <p>アーティスト名</p>
       <%= f.select :artist_id, Artist.all.map{|u| [u.artist_name, u.id]}, include_blank: true %>
     <p>カテゴリー</p>
-     <!--  <%= f.collection_check_boxes(:category_id, Category.all, :id, :category_name, include_hidden: false) do |b| %>
+      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :category_name, include_hidden: false) do |b| %>
       <%= b.label { b.check_box + b.text } %>
-      <% end %> -->
-      <%= f.select :category_id, Category.all.map{|u| [u.category_name, u.id]}, include_blank: true %>
+      <% end %>
   </div>
   <p>ディスク</p>
   <div id="discs">

@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
          has_many :reviews
          has_one :cart
+
+  acts_as_paranoid
 end

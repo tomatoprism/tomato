@@ -73,3 +73,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 # 複数の入力フォーム
 gem 'cocoon'
+
+gem "paranoia", "~> 2.2"

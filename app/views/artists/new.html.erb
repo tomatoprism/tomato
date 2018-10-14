@@ -1,8 +1,4 @@
 <div>
-	<h1>アーティスト編集・登録</h1>
-</div>
-
-<div>
 	<h2>アーティスト新規登録</h2>
 	<%= form_for(@artist_new) do |f| %>
 	<p>カテゴリー名</p>
@@ -14,3 +10,22 @@
 </div>
 
 <%= link_to "商品追加", root_path %>
+
+<table>
+	<thead>
+		<tr>
+			<th>アーティスト名</th>
+			<th>編集</th>
+			<th>削除</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @artist.each do |artist| %>
+		<tr>
+			<td><%= artist.artist_name %></td>
+			<td><%= link_to "編集", edit_artist_path(artist) %></td>
+			<td><%= link_to "削除", artist_path(artist), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
 
 
-  get 'aaa/create'
   root to:'top#top'
 
 
@@ -45,7 +44,7 @@ Rails.application.routes.draw do
   delete '/delete_item' => 'carts#delete_item'
 
 
-  resources :categories, only:[:new, :create, :update, :destroy, :show]
+  resources :categories, only:[:new, :create, :update, :destroy, :show, :edit]
 
 
   namespace :admin do
@@ -59,7 +58,7 @@ Rails.application.routes.draw do
   resources :historoies, only:[:index, :show]
 
 
-  resources :artists, only:[:new, :create, :update, :destroy, :show]
+  resources :artists, only:[:new, :create, :update, :destroy, :show, :edit]
 
 
   

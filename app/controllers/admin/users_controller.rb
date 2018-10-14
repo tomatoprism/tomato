@@ -8,5 +8,4 @@ class Admin::UsersController < Admin::ApplicationController
 		@disc = @product_new.discs.build
   		@track = @disc.tracks.build
 	end
-	
 end

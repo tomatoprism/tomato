@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def new
   	@category_new = Category.new
+    @category = Category.all
   end
 
   def create
@@ -9,10 +10,20 @@ class CategoriesController < ApplicationController
     redirect_to new_category_path
   end
 
+  def edit
+    @category_edit = Category.find(params[:id])
+  end
+
   def update
+    @category_edit = Category.find(params[:id])
+    @category_edit.update(category_params)
+    redirect_to new_category_path
   end
 
   def destroy
+    category = Category.find(params[:id])
+    category.destroy
+    redirect_to new_category_path
   end
 
   private

@@ -1,0 +1,9 @@
+<div>
+	<h2>カテゴリー編集</h2>
+	<%= form_for(@category_edit) do |f| %>
+	<p>カテゴリー名</p>
+	<%= f.text_field :category_name %>
+	<p></p>
+	<%= f.submit '編集' %>
+	<% end %>
+</div>

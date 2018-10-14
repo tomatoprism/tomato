@@ -75,3 +75,5 @@ gem 'kaminari'
 gem 'cocoon'
 
 gem "paranoia", "~> 2.2"
+
+gem 'paranoia_uniqueness_validator', '3.1.0'

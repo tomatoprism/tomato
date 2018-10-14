@@ -1,16 +1,30 @@
 <div>
-	<h1>カテゴリー編集・登録</h1>
-</div>
-
-<div>
 	<h2>カテゴリー新規登録</h2>
 	<%= form_for(@category_new) do |f| %>
 	<p>カテゴリー名</p>
 	<%= f.text_field :category_name %>
 	<p></p>
 	<%= f.submit '追加' %>
-
 	<% end %>
 </div>
 
 <%= link_to "商品追加", root_path %>
+
+<table>
+	<thead>
+		<tr>
+			<th>カテゴリー名</th>
+			<th>編集</th>
+			<th>削除</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @category.each do |category| %>
+		<tr>
+			<td><%= category.category_name %></td>
+			<td><%= link_to "編集", edit_category_path(category) %></td>
+			<td><%= link_to "削除", category_path(category), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

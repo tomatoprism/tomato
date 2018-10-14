@@ -1,0 +1,9 @@
+<div>
+	<h2>アーティスト編集</h2>
+	<%= form_for(@artist_edit) do |f| %>
+	<p>カテゴリー名</p>
+	<%= f.text_field :artist_name %>
+	<p></p>
+	<%= f.submit '編集' %>
+	<% end %>
+</div>

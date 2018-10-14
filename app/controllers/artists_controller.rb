@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   def new
     @artist_new = Artist.new
+    @artist = Artist.all
   end
 
   def create
@@ -8,8 +9,14 @@ class ArtistsController < ApplicationController
     @artist_new.save(artist_params)
     redirect_to new_artist_path
   end
+  def edit
+    @artist_edit = Artist.find(params[:id])
+  end
 
   def update
+    @artist_edit = Artist.find(params[:id])
+    @artist_edit.update(artist_params)
+    redirect_to new_artist_path
   end
 
   def destroy

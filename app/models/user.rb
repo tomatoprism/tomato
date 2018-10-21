@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
 
    acts_as_paranoid
-
+          validates_presence_of   :name
 		  validates_presence_of   :email
 		  #validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
 		 # validates_format_of     :email, with: email_regexp

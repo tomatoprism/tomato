@@ -25,4 +25,8 @@ class Product < ApplicationRecord
           favorites.where(user_id: user.id).exists?
     end
 
+    validates_presence_of :stock
+    validates_presence_of :title
+    validates_presence_of :price
+
 end

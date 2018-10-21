@@ -1,6 +1,18 @@
 <div>
 	<h2>アーティスト新規登録</h2>
 	<%= form_for(@artist_new) do |f| %>
+
+	<% if @artist_new.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= @artist_new.errors.count %>件のエラーが発生しました。</h3>
+    <ul>
+      <% @artist_new.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
 	<p>アーティスト名</p>
 	<%= f.text_field :artist_name %>
 	<p></p>

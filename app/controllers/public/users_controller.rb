@@ -10,6 +10,9 @@ class Public::UsersController < Public::ApplicationController
   end
 
 	def show
+		@categories = Category.all
+	    @artists = Artist.all
+	    @animes = Anime.all
 		@user = User.find(params[:id])
 	end
 

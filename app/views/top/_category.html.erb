@@ -1,54 +1,49 @@
-
-	<div class="thumbnail">
-		<div class="category_box">
-			<h2 class="">タイトル</h2>
-			<div>
-				<nav>
-					<ul>
-					<% animes.each do |a|%>
-						<li>
-							<%= link_to anime_path(a) do %>
-								<% if a.products.count > 0 %>
-									<%= a.anime_name %>(<%= a.products.count %>)
-								<% end %>
-							<% end %>
-						</li>
+<nav class="header_nav nav-list">
+	<ul class="nav navbar-nav navbar-right">
+	  <li class="dropdown">
+	      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">アーティスト<span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+	      	<% artists.each do |a|%>
+	        <li role="presentation">
+	        	<%= link_to artist_path(a) do %>
+					<% if a.products.count > 0 %>
+						<%= a.artist_name %>(<%= a.products.count %>)
 					<% end %>
-					</ul>
-				</nav>
-			</div>
-			<h2 class="">カテゴリー</h2>
-			<div>
-				<nav>
-					<ul>
-					<% categories.each do |c|%>
-						<li>
-							<%= link_to category_path(c) do %>
-								<% if c.products.count > 0 %>
-									<%= c.category_name %>(<%= c.products.count %>)
-								<% end %>
-							<% end %>
-						</li>
+				<% end %>
+	        </li>
+	        <% end %>
+	      </ul>
+	    </li>
+	    <li class="dropdown">
+	      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">カテゴリー<span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+	      	<% categories.each do |c|%>
+	        <li role="presentation">
+	        	<%= link_to category_path(c) do %>
+					<% if c.products.count > 0 %>
+						<%= c.category_name %>(<%= c.products.count %>)
 					<% end %>
-					</ul>
-				</nav>
-			</div>
-			<h2>アーティスト</h2>
-			<div>
-				<nav>
-					<ul>
-					<% artists.each do |a|%>
-						<li>
-							<%= link_to artist_path(a) do %>
-								<% if a.products.count > 0 %>
-									<%= a.artist_name %>(<%= a.products.count %>)
-								<% end %>
-							<% end %>
-						</li>
+				<% end %>
+	        </li>
+	        <% end %>
+	      </ul>
+	    </li>
+	    <li class="dropdown">
+	      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">アニメタイトル<span class="caret"></span></a>
+	      <ul class="dropdown-menu" role="menu">
+	      	<% animes.each do |a|%>
+	        <li role="presentation">
+	        	<%= link_to anime_path(a) do %>
+					<% if a.products.count > 0 %>
+						<%= a.anime_name %>(<%= a.products.count %>)
 					<% end %>
-					</ul>
-				</nav>
-			</div>
-			<%= link_to "全商品一覧", products_path %>
-		</div>
-	</div>
+				<% end %>
+	        </li>
+	        <% end %>
+	      </ul>
+	    </li>
+	    <li class="navbar-form navbar-left">
+          <%= render 'public/products/search' %>
+        </li>
+	</ul>
+</nav>

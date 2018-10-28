@@ -1,7 +1,14 @@
+<div class="navbar" style="background-color:  #F3FFD8;">
+  <div class="container">
+    <div class="row">
+      <%= render 'top/category', artists: @artists, categories: @categories, animes: @animes %>
+    </div>
+  </div>
+</div>
 <div class="bg-image2">
   <div class = "bg-mask2" >
 <div class="container" style="background-color: white;">
-  <h3>おすすめ商品</h3>
+  <h3>気になる商品</h3>
   <div class="row">
 
       <% @favariteproducts.each do |product| %>

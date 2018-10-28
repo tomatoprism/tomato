@@ -26,9 +26,9 @@ before_action :correct_user, only:[:new, :create, :edit, :update, :destroy]
   def show
     @anime = Anime.find(params[:id])
     @products = @anime.products.page(params[:page]).order(release: "DESC")
-    @categories = Category.all
-    @artists = Artist.all
-    @animes = Anime.all
+    @categories = Category.all.order(category_name: "ASC")
+    @artists = Artist.all.order(artist_name: "ASC")
+    @animes = Anime.all.order(anime_kana: "ASC")
   end
 
   def edit

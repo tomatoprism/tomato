@@ -8,9 +8,9 @@ class Public::FavoritesController < ApplicationController
     end
 
 	def index
-        @categories = Category.all
-        @artists = Artist.all
-        @animes = Anime.all
+        @categories = Category.all.order(category_name: "ASC")
+        @artists = Artist.all.order(artist_name: "ASC")
+        @animes = Anime.all.order(anime_kana: "ASC")
         @userfavorites = current_user.favorites
         if @userfavorites.count > 0
         products = @userfavorites.pluck(:product_id)

@@ -9,21 +9,24 @@ class Public::ProductsController < Public::ApplicationController
 
 	def index
 		@products = Product.page(params[:page]).reverse_order.order(release: "DESC")
-		@categories = Category.all
-		@artists = Artist.all
-		@animes = Anime.all
+		@categories = Category.all.order(category_name: "ASC")
+	    @artists = Artist.all.order(artist_name: "ASC")
+	    @animes = Anime.all.order(anime_kana: "ASC")
 	end
 
 	def show
+		@categories = Category.all.order(category_name: "ASC")
+	    @artists = Artist.all.order(artist_name: "ASC")
+	    @animes = Anime.all.order(anime_kana: "ASC")
 		@product = Product.find(params[:id])
 		@discs = @product.discs
         @review = Review.new
 	end
 
 	def search
-		@categories = Category.all
-		@artists = Artist.all
-		@animes = Anime.all
+		@categories = Category.all.order(category_name: "ASC")
+	    @artists = Artist.all.order(artist_name: "ASC")
+	    @animes = Anime.all.order(anime_kana: "ASC")
 		@productsearch = Product.search(params[:search]).order(release: "DESC")
 		@artistsearch = Artist.search(params[:search])
 		# .order(release: "DESC")

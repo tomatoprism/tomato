@@ -1,14 +1,16 @@
+<headunder class="navbar">
+  <div class="container">
+    <div class="row">
+      <%= render 'top/category', artists: @artists, categories: @categories, animes: @animes %>
+    </div>
+  </div>
+</headunder>
 <div class="container">
   <div class="row">
-
-    <div class="col-xs-3">
-		<%= render 'category', categories: @categories, artists: @artists, animes: @animes %>
-	</div>
-
-<div class="col-xs-9">
-	<div class="row">
-		<%= attachment_image_tag @anime, :logo, size: '100x100' %>
-	</div>
+	<div class="col-xs-9">
+		<div class="row">
+			<%= attachment_image_tag @anime, :logo, size: '100x100' %>
+		</div>
     <% @products.each do |product| %>
     <div class="col-xs-4 ">
 		<div class="thumbnail">

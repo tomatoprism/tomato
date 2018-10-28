@@ -9,8 +9,7 @@
           <th> </th>
         </tr>
         <% sum = 0 %>
-        <% cart = Cart.where(user_id: current_user.id).last %>
-        <% cart.cart_items.each do |cart_item| %>
+        <% @cart.cart_items.each do |cart_item| %>
         <tr>
          <td> <%= attachment_image_tag cart_item.product, :image, size: '100x100' %> </td>
          <td> <%= cart_item.product.title %> <br>
@@ -25,18 +24,31 @@
 
          <td> </td>
          <td> <p>合計</p></td>
-         <td> <%= cart.cart_items.sum(:quantity) %> </td>
+         <td> <%= @cart.cart_items.sum(:quantity) %> </td>
          <td> <%= sum %> </td>
        </tr>
      </table>
 
-     <% if cart.cart_items.count <= 0 %>
-     <% elsif Post.where(user_id: current_user.id).exists? %>
-     <%= link_to "注文へ進む", new_history_path, class:"btn btn-primary" %>
-     <% elsif %>
-     <%= link_to "お届け先住所を登録してください", new_post_path, class:"btn btn-danger" %><br>
-     <% end %>
-     <%= link_to "トップへ戻る", root_path, class:"btn btn-info"%>
+      <h3>現在のお届け先</h3>
+      <p>郵便番号　　〒<%= current_user.post_code %></p>
+      <p>住所　　　　<%= current_user.address %></p>
+
+     <% if @cart.cart_items.count > 0 %>
+      <h3>お届け先選択</h3>
+      <div class="ship">
+       <%= form_tag post_update_path do %>
+        <% current_user.posts.each do |post| %>
+           <%= radio_button 'user', 'address', post.id, {:checked => true } %>
+           〒<%= post.post_code %><br>
+           <%= post.post_address %><br>
+        <% end %>
+      
+           <br><%= link_to "住所の追加", new_post_path, class:"btn btn-primary" %>
+           <%= submit_tag "注文へ進む", class:"btn btn-danger" %><br>
+        <% end %>
+        </div>
+       <% end %>
+     <br><%= link_to "トップへ戻る", root_path, class:"btn btn-info"%>
    </div>
- </table>
+
 </div>

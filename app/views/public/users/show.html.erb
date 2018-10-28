@@ -41,16 +41,18 @@
   </table>
   <%= link_to "お客様情報 編集", edit_user_path(@user), class:"btn btn-primary" %><br>
 
-  <% if Post.where(user_id: @user.id).exists? %>
-        <h3>お届け先住所</h3>
-        <p>〒<%= @user.post.post_code %></p>
-        <%= @user.prefecture.prefecture%>
-        <%= @user.post.post_address %><br>
-        <%= link_to "お届け先住所 編集", edit_post_path(@user.post.id), class:"btn btn-primary" %><br>
+ <% if Post.where(user_id: @user.id).exists? %>
+    <h3>お届け先住所</h3><br>
+       <% @user.posts.each do|post| %>
+        〒<%= post.post_code %><br>
+        <%= post.post_address %><br>
+        <%= link_to "住所の編集", edit_post_path(post.id), class:"btn btn-primary" %><br><br>
+      <% end %>
+      <%= link_to "住所の追加", new_post_path, class:"btn btn-info" %><br><br>
 
   <% elsif @user == current_user %>
         <h3>お届け先住所登録</h3>
-        <%= link_to "登録", new_post_path, class:"btn btn-info" %>
+        <%= link_to "登録", new_post_path, class:"btn btn-info" %><br>
 
   <% else current_user == current_admin  %>
 

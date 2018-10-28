@@ -1,27 +1,20 @@
-<div class="bg-image">
-  <div class = "bg-mask" >
 <div class = "container" >
 	<div class = "row" >
-		<div class ="edit">
+		<div class="col-xs-offset-3 col-lg-6" >
 
 			<h3>お届け先住所変更</h3>
 			<%= form_for @post do |f| %>
 			<h4>郵便番号</h4>
 			<%= f.text_field :post_code %>
-
 			<h4>住所</h4>
-			　　　<h5>都道府県</h5>
-			<%= f.select :prefecture_id, Prefecture.all.collect { |p| [ p.prefecture, p.id ] } %><br>
+			<!-- 　<h5>都道府県</h5>
+			<%= f.select :prefecture_id, Prefecture.all.collect { |p| [ p.prefecture, p.id ] } %><br>  　 -->　
 			<%= f.text_area :post_address %><br>
 			<div style = "padding-top: 30px;" >
 				<%= f.submit "編集", class:"btn btn-primary" %>
-
 				<% end %>
-
 				<%= link_to "戻る", :back, class: "btn btn-info" %>
 			</div>
 		</div>
 	</div>
 </div>
-</div>
-

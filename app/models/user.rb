@@ -5,11 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   after_create:create_cart
+  after_create:create_post
 
          has_many :reviews, dependent: :destroy
 
-         has_one :post
-		 has_one :prefecture, through: :post
+         has_many :posts
+		 has_many :prefectures, through: :post
 
          has_many :carts
 
@@ -27,7 +28,11 @@ class User < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 
 private
-def create_cart
+    def create_cart
 		carts.create(user_id: self.id)
 	end
+
+    def create_post
+	    posts.create(user_id: self.id, post_address: self.address, post_code: self.post_code)
+    end
 end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
 }
 
+ post "/post_update" => "public/users#post_update"
+
   namespace :admin do
       resources :users, only:[:index, :show]
   end

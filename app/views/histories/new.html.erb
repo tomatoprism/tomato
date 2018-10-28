@@ -63,10 +63,9 @@
    <div class="user-info">
     <h3>購入者情報</h3>
      <p>お名前　　　　　<%= current_user.name %></p>
-     <p>郵便番号　　　　　〒<%= current_user.post.post_code %></p>
+     <p>郵便番号　　　　　〒<%= current_user.post_code %></p>
      <p>お届け先住所　　
-          <%= current_user.prefecture.prefecture %>
-          <%= current_user.post.post_address %></p>
+          <%= current_user.address %></p>
     </div>
   </div>
 </div>

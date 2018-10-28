@@ -40,9 +40,11 @@ def create
         @history_product.subtotal = 0
         @history_product.subtotal = c.product.price * c.quantity
         @history_product.save
+
         stock = c.product.stock - c.quantity
         stock_update = Product.find_by(id: c.product.id)
         stock_update.update(stock: stock)
+                binding.pry
       end
     end
 
@@ -50,9 +52,8 @@ def create
       @history.post_code_history = current_user.post_code
       @history.post_address_history = current_user.address
       @history.user_name = current_user.name
-      @history.post_code_history = current_user.post.post_code
-      @history.prefecture_history = current_user.prefecture.prefecture
-      @history.post_address_history = current_user.post.post_address
+      @history.post_code_history = current_user.post_code
+      @history.post_address_history = current_user.address
       @history.status = 0
       @history.save
       cart = Cart.new(user_id: current_user.id)

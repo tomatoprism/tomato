@@ -1,4 +1,4 @@
-<div class="bg-image">
+ <div class="bg-image">
   <div class = "bg-mask" >
     <div class = "container" >
 	<div class = "row" >
@@ -10,8 +10,8 @@
 
             <p>住所</p>
 
-            <p>都道府県</p>
-            <%= f.select :prefecture_id, Prefecture.all.collect { |p| [ p.prefecture, p.id ] } %><br>
+           <!--  <p>都道府県</p>
+            <%= f.select :prefecture_id, Prefecture.all.collect { |p| [ p.prefecture, p.id ] } %><br>  -->
             <%= f.text_area :post_address %><br>
 
             <div style = "padding-top: 30px;" >
@@ -24,6 +24,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 

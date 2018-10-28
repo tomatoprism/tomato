@@ -32,8 +32,8 @@ class CartsController < ApplicationController
     end
   end
 
-
   def show
+     @cart = Cart.where(user_id: current_user.id).last
   end
 
   def delete_item

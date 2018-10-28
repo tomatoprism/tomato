@@ -28,10 +28,21 @@ class Public::UsersController < Public::ApplicationController
 	end
 
 	def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to root_path, danger: '退会しました'
+    	@user = User.find(params[:id])
+   	    @user.destroy
+        redirect_to root_path, danger: '退会しました'
   	end
+
+  	def post_update
+	  if
+	  	 @post_update = Post.find(params[:user][:address])
+		 @user = current_user
+		 @user.update(address:@post_update.post_address, post_code:@post_update.post_code)
+		 redirect_to new_history_path
+	  else
+		 redirect_to new_history_path
+	  end
+	end
 
 	private
     def user_params

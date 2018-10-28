@@ -15,11 +15,23 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+	font-family:'M PLUS Rounded 1c', sans-serif;
+	}
+
+.nav-list{
+	font-family:'Nico Moji';
+	}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+
 .clearfix:after {
 	content:"";
 	display:block;

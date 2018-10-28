@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track':'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track':'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
   </head>
   <body>
     <header class="navbar navbar-top">
@@ -58,11 +60,18 @@
                 </li>
                 <li>
                   <% if Cart.where(user_id: current_user.id).exists? %>
-                  <%=link_to "カート",cart_path(current_user.carts.where(user_id: current_user.id).last) %>
+                  <%= link_to cart_path(current_user.carts.where(user_id: current_user.id).last) do %>
+                  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                  <% end %>
                   <% end %>
                 </li>
                 <li>
-                  <%=link_to "お気に入り",favorites_path %>
+                  <%= link_to favorites_path do %>
+                  <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "お問い合わせ", new_message_path %>
                 </li>
                 <li>
                   <%=link_to "ログアウト",destroy_user_session_path, method: :delete %>
@@ -77,6 +86,9 @@
                 <li>
                   <%= link_to"ログイン", new_user_session_path %>
                 </li>
+                <li>
+                <%= link_to "お問い合わせ", new_message_path %>
+              </li>
                 <li class="navbar-form navbar-left">
                   <%= render 'public/products/search' %>
                 </li>
@@ -101,7 +113,6 @@
         <div class="row">
           <div class="col-xs-3 col-xs-offset-9">
             <p>©️2018 All right Reserved</p>
-            <%= link_to "お問い合わせ", new_message_path %>
           </div>
         </div>
       </div>

@@ -1,123 +1,77 @@
-<headunder class="navbar">
+<div class="navbar" style="background-color:  #F3FFD8;">
   <div class="container">
     <div class="row">
       <%= render 'top/category', artists: @artists, categories: @categories, animes: @animes %>
     </div>
   </div>
-</headunder>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3">
-      <%= render 'category', categories: @categories, artists: @artists, animes: @animes %>
-    <div class="col-xs-9">
-      <h3>商品検索一覧</h3>
-      <% @productsearch.each do |product| %>
-      <div class="col-xs-4">
+</div>
+
+
+<div class="bg-image2">
+  <div class = "bg-mask2" >
+    <div class="container" style="background-color: white;">
+     <h3>商品検索一覧</h3>
+     <div class="row">
+       <% @productsearch.each do |product| %>
+       <div class="col-xs-3">
         <div class="thumbnail">
-          <div class="productbox">
-            <div class = "product-image" >
-                <%= link_to product_path(product.id) do %>
-                  <%= attachment_image_tag product, :image, :fill, 100, 100 %>
-                <% end %>
-            </div>
-            <div class = "product-info" >
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <ul>
-                      <li>シングル・アルバム名</li>
-                      <li>
-                        <%= link_to product_path(product.id) do %>
-                          <%= product.title %>
-                        <% end %>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <ul>
-                      <li>カテゴリー</li>
-                      <li>
-                        <% product.categories.each do |cate| %>
-                          <%= link_to category_path(cate.id) do  %>
-                            <%= cate.category_name %>
-                          <% end %>
-                        <% end %>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <ul>
-                        <li>アーティスト</li>
-                        <li>
-                          <%= link_to artist_path(product.artist.id) do  %>
-                            <%= product.artist.artist_name %>
-                          <% end %>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-            </table>
-            <ul>
-              <li>
-                ¥<%= product.price %>
-              </li>
-              <li>
-                <% if product.stock == 0 then %>
-                  <p>在庫なし</p>
-                <% else %>
-                  <p>在庫あり</p>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <% end %>
-      <div class="col-xs-9">
-        <h3>アーティスト検索一覧</h3>
-          <% @artistsearch.each do |a| %>
+
+         <div class = "product-image" >
+           <%= link_to product_path(product.id) do %>
+           <%= attachment_image_tag product, :image, size: '100x100' %>
+           <% end %>
+         </div>
+         <div class = "product-info" >
           <ul>
-            <li>
-              <%= link_to artist_path(a) do %>
-              <%= a.artist_name %>
-              <% end %>
-            </li>
-          </ul>
-          <% end %>
+           <li> 
+            <%= link_to product_path(product.id) do %>
+            <%= product.title %>
+            <% end %>
+          </li>
+          <li>
+            <% product.categories.each do |cate| %>
+            <%= link_to category_path(cate.id) do  %>
+            <%= cate.category_name %>
+            <% end %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to artist_path(product.artist.id) do  %>
+            <%= product.artist.artist_name %>
+            <% end %>
+          </li>
+          <li>
+            ¥<%= product.price %>
+          </li>
+          <li>
+            <% if product.stock == 0 then %>
+            <p>在庫なし</p>
+            <% else %>
+            <p>在庫あり</p>
+            <% end %>
+          </li>
+        </ul>
+        
       </div>
     </div>
   </div>
+  <% end %>
 </div>
+
+
+<h3>アーティスト検索一覧</h3>
+<div class="row">
+
+  <% @artistsearch.each do |a| %>
+  <div class="col-xs-3">
+    
+    <ul><li>
+      <%= link_to artist_path(a) do %>
+      <%= a.artist_name %>
+      <% end %>
+    </li></ul>
+    <% end %>
+  </div>
+</div>
+
+

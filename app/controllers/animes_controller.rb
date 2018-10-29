@@ -16,7 +16,7 @@ before_action :correct_user, only:[:new, :create, :edit, :update, :destroy]
     @anime_new = Anime.new(anime_params)
 
     if @anime_new.save(anime_params)
-    redirect_to anime_path, success: 'アニメタイトルが追加されました'
+    redirect_to animes_path, success: 'アニメタイトルが追加されました'
     else
       @animes = Anime.all
       render 'index'

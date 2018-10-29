@@ -157,6 +157,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_072208) do
     t.date "release"
     t.string "introduction"
     t.integer "artist_id"
+    t.integer "anime_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

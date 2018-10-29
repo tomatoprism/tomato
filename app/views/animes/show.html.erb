@@ -10,14 +10,16 @@
 <div class="container" style="background-color: white;">
   <div class="row">
 	<div class="col-xs-9">
-		<div class="row">
-			<%= attachment_image_tag @anime, :logo, size: '100x100' %>
+		<div class="row anime_image">
+			<%= attachment_image_tag @anime, :logo %>
 		</div>
     <% @products.each do |product| %>
     <div class="col-xs-4 ">
 		<div class="thumbnail">
 	            <%= link_to product_path(product.id) do %>
-	            <%= attachment_image_tag product, :image, size: '100x100' %>
+	            <div class="index_image">
+	            <%= attachment_image_tag product, :image %>
+	        	</div>
 	            <% end %>
 	  		<div class="caption" >
 	            <p><%= link_to product_path(product.id) do %>

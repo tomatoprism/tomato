@@ -18,7 +18,7 @@
 		<p></p>
 		<p>フリガナ</p>
 			<%= f.text_field :anime_kana %>
-		<p>ジャケット画像</p>
+		<p>ロゴ画像</p>
       		<%= f.attachment_field :logo, placeholder: "アニメロゴ画像" %>
 		<p></p>
 		<%= f.submit '追加' %>
@@ -43,7 +43,7 @@
 				<tr>
 					<td><%= anime.anime_name %></td>
 					<td><%= anime.anime_kana %></td>
-					<td><%= attachment_image_tag anime, :logo, size: '50x50' %></td>
+					<td class="anime_image"><%= attachment_image_tag anime, :logo %></td>
 					<td><%= link_to "編集", edit_anime_path(anime) %></td>
 					<td><%= link_to "削除", anime_path(anime), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
 				</tr>

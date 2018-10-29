@@ -11,7 +11,9 @@
         <% sum = 0 %>
         <% @cart.cart_items.each do |cart_item| %>
         <tr>
-         <td> <%= attachment_image_tag cart_item.product, :image, size: '100x100' %> </td>
+         <td class="index_image">
+          <%= attachment_image_tag cart_item.product %>
+         </td>
          <td> <%= cart_item.product.title %> <br>
           <%= cart_item.product.artist.artist_name %> </td>
           <td> <%= cart_item.quantity %> </td>

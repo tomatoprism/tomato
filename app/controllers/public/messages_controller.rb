@@ -7,7 +7,7 @@ class Public::MessagesController < Public::ApplicationController
   def create
   	message = Message.new(message_params)
   	message.save
-  	redirect_to new_message_path, success: 'お問い合わせ内容が送信されました'
+  	redirect_to new_message_path, success: 'お問い合わせを送信しました'
   end
 
   private

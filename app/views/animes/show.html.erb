@@ -1,11 +1,13 @@
-<headunder class="navbar">
+<div class="navbar" style="background-color:  #F3FFD8;">
   <div class="container">
     <div class="row">
       <%= render 'top/category', artists: @artists, categories: @categories, animes: @animes %>
     </div>
   </div>
-</headunder>
-<div class="container">
+</div>
+  <div class="bg-image2">
+    <div class = "bg-mask2">
+<div class="container" style="background-color: white;">
   <div class="row">
 	<div class="col-xs-9">
 		<div class="row">
@@ -59,5 +61,7 @@
   <div class="row" style= "text-align: center;" >
   <%= paginate @products, class: "pagenate" %>
   
+</div>
+</div>
 </div>
 </div>

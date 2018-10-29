@@ -44,7 +44,6 @@ def create
         stock = c.product.stock - c.quantity
         stock_update = Product.find_by(id: c.product.id)
         stock_update.update(stock: stock)
-                binding.pry
       end
     end
 

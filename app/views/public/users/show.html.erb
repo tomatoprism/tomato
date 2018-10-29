@@ -48,13 +48,13 @@
         <%= post.post_address %><br>
         <%= link_to "住所の編集", edit_post_path(post.id), class:"btn btn-primary" %><br><br>
       <% end %>
-      <%= link_to "住所の追加", new_post_path, class:"btn btn-info" %><br><br>
 
-  <% elsif @user == current_user %>
+      <% elsif @user == current_user %>
+        <%= link_to "住所の追加", new_post_path, class:"btn btn-info" %><br><br>
         <h3>お届け先住所登録</h3>
         <%= link_to "登録", new_post_path, class:"btn btn-info" %><br>
 
-  <% else current_user == current_admin  %>
+      <% else current_user == current_admin  %>
 
   <% end %>
 

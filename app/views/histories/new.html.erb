@@ -11,7 +11,9 @@
  　　　<% cart = Cart.where(user_id: current_user.id).last %>
 	　　<% cart.cart_items.each do |cart_item| %>
 		  <tr>
-		  	<td> <%= attachment_image_tag cart_item.product, :image, size: '100x100' %> </td>
+		  	<td class="index_image">
+          <%= attachment_image_tag cart_item.product, :image %>
+        </td>
 		  	<td><ul>
                <li>タイトル</li>
                <li><%= cart_item.product.title %></li>

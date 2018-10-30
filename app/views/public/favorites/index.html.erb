@@ -15,9 +15,10 @@
         <div class="col-xs-3">
           <div class="thumbnail">
             <div class="productbox">
-              <div class = "product-image" >
                   <%= link_to product_path(product.id) do %>
-                    <%= attachment_image_tag product, :image, size: '100x100' %>
+                  <div class="index_image">
+                    <%= attachment_image_tag product, :image %>
+                  </div>_
                   <% end %>
               </div>
               <div class = "product-info" >

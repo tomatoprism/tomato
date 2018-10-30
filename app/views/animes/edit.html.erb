@@ -12,7 +12,9 @@
       </div>
      <% end %>
 	<p>現在表示されている画像</p>
-	<%= attachment_image_tag @anime_edit, :logo, size: '100x100' %>
+	<div class="anime_image">
+	<%= attachment_image_tag @anime_edit, :logo %>
+	</div>
 	<p>ロゴ画像</p>
 	<%= f.attachment_field :logo, placeholder: "ロゴ画像" %>
 	<p></p>

@@ -12,7 +12,9 @@
       <div class = "row" >
 
         <div class="col-lg-4" >
-          <%= attachment_image_tag @product, :image, size: '300x300' %>
+          <div class="product_image">
+            <%= attachment_image_tag @product, :image %>
+          </div>
         </div>
 
         <div class="col-lg-8">

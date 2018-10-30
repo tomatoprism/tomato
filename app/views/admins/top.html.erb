@@ -8,7 +8,9 @@
 			<%= link_to 'Log in', new_admin_session_path, class: 'btn btn-info btn-block sign_in' %>
 			</div>
 			<div class="signup">
-			<%= link_to 'Sign up', new_admin_registration_path, class: 'btn btn-success btn-block sign_up' %>
+				<% if admin_signed_in? %>
+				<%= link_to 'Sign up', new_admin_registration_path, class: 'btn btn-success btn-block sign_up' %>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -1,3 +1,4 @@
+<div class="container">
 <h2>Admin Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -20,6 +21,7 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  <p></p>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
@@ -27,3 +29,4 @@
 <% end %>
 
 <%= render "admins/shared/links" %>
+</div>

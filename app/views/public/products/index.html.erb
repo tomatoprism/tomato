@@ -29,13 +29,15 @@
             <p>
               <% product.categories.each do |cate| %>
               <%= link_to category_path(cate.id) do  %>
-              <%= cate.category_name %>
+              <%= truncate(cate.category_name, length: 10) %>
               <% end %>
               <% end %>
             </p>
 
             <p>
-              <%= link_to product.artist.artist_name, artist_path(product.artist) %>
+              <%= link_to artist_path(product.artist) do %>
+              <%= truncate(product.artist_name, length: 10) %>
+              <% end %>
             </p>
 
             <p>

@@ -11,5 +11,4 @@ class Artist < ApplicationRecord
 			Artist.all
 		end
 	end
-
 end

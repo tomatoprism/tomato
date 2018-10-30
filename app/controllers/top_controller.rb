@@ -1,8 +1,8 @@
 class TopController < ApplicationController
 	def top
-		@categories = Category.all
-		@artists = Artist.all
-		@animes = Anime.all
+		@categories = Category.all(category_name: "ASC")
+		@artists = Artist.all(artist_name: "ASC")
+		@animes = Anime.all(anime_kana: "ASC")
 		@productfind = Product.search(params[:search])
 		productsort = Product.order(release: "DESC")
 		@products = productsort.limit(8)

@@ -17,7 +17,7 @@
             </p>
 
             <p>
-              <%= less.artist.artist_name %>
+              <%= truncate(less.artist.artist_name, length: 10) %>
             </p>
 
             <p>
@@ -63,7 +63,7 @@
 
             <p>
               <%= link_to artist_path(product.artist.id) do %>
-              <%= product.artist.artist_name %>
+              <%= truncate(product.artist.artist_name, length: 10) %>
               <% end %>
             </p>
 

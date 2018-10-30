@@ -12,7 +12,7 @@
         <% @cart.cart_items.each do |cart_item| %>
         <tr>
          <td class="index_image">
-          <%= attachment_image_tag cart_item.product, image: %>
+          <%= attachment_image_tag cart_item.product, :image %>
          </td>
          <td> <%= cart_item.product.title %> <br>
           <%= cart_item.product.artist.artist_name %> </td>

@@ -44,7 +44,7 @@
            <% end %>
            <div class = "ranking-info" >
              <ul>
-               <li> <%= ranking.title %> </li>
+               <li> <%= truncate(ranking.title, length:10) %> </li>
                <li>発売日<br>
                  <%= ranking.release %></li>
                  <li> <%= ranking.price %>円 </li>

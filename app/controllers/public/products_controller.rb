@@ -27,8 +27,10 @@ class Public::ProductsController < Public::ApplicationController
 		@categories = Category.all.order(category_name: "ASC")
 	    @artists = Artist.all.order(artist_name: "ASC")
 	    @animes = Anime.all.order(anime_kana: "ASC")
-		@productsearch = Product.search(params[:search]).order(release: "DESC")
-		@artistsearch = Artist.search(params[:search])
+		@productsearch = Product.search(params[:search]).order(title: "ASC")
+		@artistsearch = Artist.search(params[:search]).order(artist_name: "ASC")
+		@animesearch = Anime.search(params[:search]).order(anime_kana: "ASC")
+		@categorysearch = Category.search(params[:search]).order(category_name: "ASC")
 		# .order(release: "DESC")
 	end
 

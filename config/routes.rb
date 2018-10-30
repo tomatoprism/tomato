@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   root to:'top#top'
 
-  devise_for :admins, controllers: {
-  sessions:      'admins/sessions',
-  passwords:     'admins/passwords',
-  registrations: 'admins/registrations'
-}
+
   devise_for :users, controllers: {
   sessions:      'users/sessions',
   passwords:     'users/passwords',
   registrations: 'users/registrations'
 }
+
+devise_for :admins, :skip => [:registrations]#デフォルトルートを切る
+  as :admin do
+  authenticated :admin do# 認証をかける
+      get 'admin/sign_up' => 'admins/registrations#new', :as => :new_admin_registration
+      post 'admin/sign_up' => 'admins/registrations#create', :as => :admin_registration
+  end
+end
 
  post "/post_update" => "public/users#post_update"
 

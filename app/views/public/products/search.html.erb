@@ -25,19 +25,19 @@
             <ul>
               <li> 
                 <%= link_to product_path(product.id) do %>
-                <%= product.title %>
+                <%= truncate(product.title, length:10) %>
                 <% end %>
               </li>
               <li>
                 <% product.categories.each do |cate| %>
                   <%= link_to category_path(cate.id) do  %>
-                  <%= cate.category_name %>
+                  <%= truncate(cate.category_name, length:10) %>
                   <% end %>
                 <% end %>
               </li>
               <li>
                 <%= link_to artist_path(product.artist.id) do  %>
-                <%= product.artist.artist_name %>
+                <%= truncate(product.artist.artist_name, length:10) %>
                 <% end %>
               </li>
               <li>
